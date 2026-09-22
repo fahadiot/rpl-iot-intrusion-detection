@@ -1,4 +1,4 @@
-# AI-Powered Intrusion Detection System (IoT / RPL Routing Attacks)
+# RPL IoT Intrusion Detection (Routing Attack Classification)
 
 A machine learning project that classifies IoT network traffic as **Normal** or one of four
 **RPL routing-protocol attacks** Blackhole, Flooding, Rank, and Version and, more
