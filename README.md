@@ -46,10 +46,16 @@ Looking at the confusion matrix, both Random Forest and Gradient Boosting mix up
 ## Files
 
 - `model.ipynb`: the main notebook
+- `requirements.txt`: Python dependencies
 - `Dataset/RPL_Routing_Attacks.csv`: the data
 - `images/`: class distribution chart, confusion matrix, classification report
 - `Project_Report.pdf`: a write-up version of the same thing
 
 ## Running it
 
-Open `model.ipynb` in Jupyter or VS Code and run all cells. Needs `pandas`, `numpy`, and `scikit-learn`.
+Install the dependencies, then open `model.ipynb` in Jupyter or VS Code and run all cells:
+
+```bash
+pip install -r requirements.txt
+jupyter notebook model.ipynb
+```
