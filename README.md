@@ -20,6 +20,8 @@ Class counts are pretty imbalanced:
 | Version | 147,224 |
 | Rank | 130,529 |
 
+![Class distribution](images/class_distribution.png)
+
 ## What's in the notebook
 
 `model.ipynb` walks through the whole thing step by step:
@@ -41,7 +43,21 @@ One thing worth mentioning: the first run of this scored 100% accuracy, which wa
 
 Random Forest and Gradient Boosting only beat plain Logistic Regression by about 10 points, so most of the signal in this data is fairly simple.
 
+Per class F1 on the test set (209,715 rows, full report in [images/classification_report.txt](images/classification_report.txt)):
+
+| Class | Random Forest | Gradient Boosting |
+|---|---|---|
+| Blackhole | 0.48 | 0.66 |
+| Flooding | 0.81 | 0.81 |
+| Normal | 0.78 | 0.78 |
+| Rank | 0.71 | 0.78 |
+| Version | 0.62 | 0.42 |
+
 Looking at the confusion matrix, both Random Forest and Gradient Boosting mix up Blackhole and Version attacks a lot more than any other pair, since those two look very similar in the available features. That seems to be a limit of the data itself rather than something a different model would fix (a CNN was tried too, but never did better than Random Forest, so it wasn't worth the extra complexity).
+
+![Random Forest confusion matrix](images/confusion_matrix.png)
+
+In the Random Forest run, 16,156 of the 37,150 Blackhole rows were predicted as Version.
 
 ## Files
 
